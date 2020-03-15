@@ -13,6 +13,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
+    "styled-components": "^5.0.1",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -35,5 +36,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-test-renderer": "^16.9.2",
+    "@types/styled-components": "^5.0.1",
+    "@welldone-software/why-did-you-render": "^4.0.5",
+    "react-test-renderer": "^16.13.0"
   }
 }

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader component should render without issues renders correctly 1`] = `
+<div
+  className="sc-AxjAm IhxNZ"
+>
+  <h1>
+    Convert integer numbers to Roman numerals and vise versa
+  </h1>
+  <div
+    className="sc-AxirZ kTaGvQ"
+  >
+    <div
+      className="sc-AxiKw kDohYG"
+    >
+      <input
+        className="sc-AxhCb fnSXOa"
+        min={1}
+        onChange={[Function]}
+        placeholder="Enter an integer"
+        type="number"
+        value="1"
+      />
+      <p
+        className="sc-AxgMl gbGUHk"
+      >
+        In Romans: I
+      </p>
+    </div>
+    <div
+      className="sc-AxiKw kDohYG"
+    >
+      <input
+        className="sc-AxhCb fnSXOa"
+        onChange={[Function]}
+        placeholder="Enter a roman numeral"
+        type="text"
+        value="I"
+      />
+      <p
+        className="sc-AxgMl gbGUHk"
+      >
+        In Decimal: 1
+      </p>
+    </div>
+  </div>
+</div>
+`;
