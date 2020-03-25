@@ -1,4 +1,4 @@
-import { positiveIntPattern, romanPattern } from "../constants";
+import { positiveIntPattern, strictRomanPattern } from "../constants";
 
 type indexOfRomanBaseDigits = keyof typeof RomanNumerals.RomanBaseDigits;
 const RomanNumerals = {
@@ -50,7 +50,7 @@ const RomanNumerals = {
   },
   //This method validates a user input againist a Regex for Roman numerals
   validateRoman(romanString: string): boolean {
-    return romanPattern.test(romanString);
+    return strictRomanPattern.test(romanString);
   }
 };
 export default RomanNumerals;

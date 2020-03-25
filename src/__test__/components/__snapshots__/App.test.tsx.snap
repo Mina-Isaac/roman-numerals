@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loader component should render without issues renders correctly 1`] = `
+exports[`App component should render without issues renders correctly 1`] = `
 <div
   className="sc-AxjAm IhxNZ"
 >
@@ -13,6 +13,11 @@ exports[`Loader component should render without issues renders correctly 1`] = `
     <div
       className="sc-AxiKw kDohYG"
     >
+      <p
+        className="sc-AxheI iCSHJl"
+      >
+        Decimal integers to Roman numerals
+      </p>
       <input
         className="sc-AxhCb fnSXOa"
         min={1}
@@ -30,6 +35,11 @@ exports[`Loader component should render without issues renders correctly 1`] = `
     <div
       className="sc-AxiKw kDohYG"
     >
+      <p
+        className="sc-AxheI iCSHJl"
+      >
+        Roman numerals to decimal integers
+      </p>
       <input
         className="sc-AxhCb fnSXOa"
         onChange={[Function]}

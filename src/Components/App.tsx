@@ -62,20 +62,26 @@ const Result = styled.p`
   word-break: break-all;
 `;
 
+const Title = styled.p`
+  color: green;
+  font-size: 14;
+  font-weight: bold;
+`;
+
 const App: React.FC = () => {
   const [decimal, setDecimal] = useState<string>("1");
   const [roman, setRoman] = useState<string>("I");
 
-  function handleChangeRoman(e: React.ChangeEvent<HTMLInputElement>) {
-    setRoman(e.target.value);
-  }
-  function handleChangeDecimal(e: React.ChangeEvent<HTMLInputElement>) {
-    setDecimal(e.target.value);
+  function handleChange(romOrDec: "rom" | "dec") {
+    return (e: React.ChangeEvent<HTMLInputElement>) =>
+      romOrDec === "rom"
+        ? setRoman(e.target.value)
+        : setDecimal(e.target.value);
   }
 
   //Implementing useDebounce hook to enhance both performance and user experience
   const romanErr = RomanNumerals.validateRoman(roman);
-  const decimalErr =RomanNumerals.validatePositiveInteger(decimal);
+  const decimalErr = RomanNumerals.validatePositiveInteger(decimal);
   const debouncedRoman = useDebounce(
     romanErr && RomanNumerals.fromRoman(roman),
     500
@@ -91,9 +97,10 @@ const App: React.FC = () => {
         <h1>Convert integer numbers to Roman numerals and vise versa</h1>
         <Field>
           <Wrapper>
+            <Title>Decimal integers to Roman numerals</Title>
             <Input
               type="number"
-              onChange={handleChangeDecimal}
+              onChange={handleChange("dec")}
               value={decimal}
               placeholder="Enter an integer"
               min={1}
@@ -103,15 +110,16 @@ const App: React.FC = () => {
             )) || <Result>{`In Romans: ${debouncedDecimal}`}</Result>}
           </Wrapper>
           <Wrapper>
+            <Title>Roman numerals to decimal integers</Title>
             <Input
               type="text"
-              onChange={handleChangeRoman}
+              onChange={handleChange("rom")}
               value={roman}
               placeholder="Enter a roman numeral"
             />
-            {(!debouncedRoman && <Err>Please enter a valid roman numeral</Err>) || (
-              <Result>{`In Decimal: ${debouncedRoman}`}</Result>
-            )}
+            {(!debouncedRoman && (
+              <Err>Please enter a valid roman numeral</Err>
+            )) || <Result>{`In Decimal: ${debouncedRoman}`}</Result>}
           </Wrapper>
         </Field>
       </Container>
